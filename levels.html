@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>關卡設計｜異界尋訪</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:"Microsoft JhengHei",sans-serif;
+  background:linear-gradient(180deg,#9ad9ff,#e6f7ff);
+  color:#034;
+}
+
+/* ===== HERO（統一版）===== */
+.hero{
+  min-height:70vh;
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.6)),
+    url("img/levels-hero.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:clamp(3rem,6vw,4.5rem);
+  font-weight:900;
+  letter-spacing:6px;
+  text-shadow:4px 4px 0 #ff9f1c;
+}
+
+.hero p{
+  margin-top:14px;
+  font-size:1.2rem;
+  opacity:.95;
+}
+
+/* ===== 內容區 ===== */
+section{
+  padding:90px 20px;
+}
+
+/* ===== 關卡卡片 ===== */
+.level-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:32px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.level-card{
+  background:#ffffffdd;
+  border-radius:28px;
+  padding:26px;
+  text-align:center;
+  box-shadow:0 18px 36px rgba(0,0,0,.25);
+  transition:.4s;
+  cursor:pointer;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+
+.level-card:hover{
+  transform:translateY(-14px) rotate(-1.5deg) scale(1.05);
+  box-shadow:0 32px 64px rgba(0,0,0,.45);
+}
+
+.level-card:nth-child(1){animation-delay:.2s;}
+.level-card:nth-child(2){animation-delay:.4s;}
+.level-card:nth-child(3){animation-delay:.6s;}
+.level-card:nth-child(4){animation-delay:.8s;}
+.level-card:nth-child(5){animation-delay:1s;}
+
+.level-img{
+  width:100%;
+  height:170px;
+  border-radius:22px;
+  overflow:hidden;
+  margin-bottom:18px;
+}
+
+.level-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.level-card:hover .level-img img{
+  transform:scale(1.12);
+}
+
+.level-card h3{
+  font-weight:900;
+  color:#ff7b00;
+  margin-bottom:10px;
+}
+
+.level-card p{
+  font-size:.95rem;
+  line-height:1.7;
+}
+
+/* ===== 返回 ===== */
+.back{
+  text-align:center;
+  margin-top:90px;
+}
+
+.back a{
+  display:inline-block;
+  padding:14px 36px;
+  background:#ffb703;
+  color:#fff;
+  font-weight:900;
+  border-radius:999px;
+  text-decoration:none;
+  box-shadow:0 14px 26px rgba(0,0,0,.3);
+  transition:.3s;
+}
+
+.back a:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 46px rgba(0,0,0,.45);
+}
+
+/* ===== 動畫 ===== */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(24px);}
+  to{opacity:1; transform:none;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>🗺️ 關卡設計</h1>
+    <p>五大關卡 × 校園異世界冒險</p>
+  </div>
+</section>
+
+<!-- 關卡內容 -->
+<section>
+
+<div class="level-grid">
+
+  <div class="level-card">
+    <div class="level-img">
+      <img src="img/level1.png">
+    </div>
+    <h3>第一關｜禮拜堂</h3>
+    <p>
+      遊戲的起點關卡，  
+      引導玩家熟悉移動與跳躍操作，  
+      並初步感受異世界氛圍。
+    </p>
+  </div>
+
+  <div class="level-card">
+    <div class="level-img">
+      <img src="img/level2.png">
+    </div>
+    <h3>第二關｜人文學院</h3>
+    <p>
+      地形變化增加，  
+      需要觀察路線與掌握時機，  
+      開始考驗操作技巧。
+    </p>
+  </div>
+
+  <div class="level-card">
+    <div class="level-img">
+      <img src="img/level3.png">
+    </div>
+    <h3>第三關｜體育館</h3>
+    <p>
+      垂直型關卡設計，  
+      跳躍與閃避的連續操作，  
+      帶來更高緊張感。
+    </p>
+  </div>
+
+  <div class="level-card">
+    <div class="level-img">
+      <img src="img/level4.png">
+    </div>
+    <h3>第四關｜管理學院</h3>
+    <p>
+      複合地形與敵人配置，  
+      需要更快的反應與判斷，  
+      提升挑戰難度。
+    </p>
+  </div>
+
+  <div class="level-card">
+    <div class="level-img">
+      <img src="img/level5.png">
+    </div>
+    <h3>第五關｜宿舍</h3>
+    <p>
+      最終關卡，  
+      結合所有學到的技巧，  
+      完成冒險並取得最後寶石。
+    </p>
+  </div>
+
+</div>
+
+<div class="back">
+  <a href="index.html">← 回首頁</a>
+</div>
+
+</section>
+
+</body>
+</html>

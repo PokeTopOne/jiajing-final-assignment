@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>使用工具｜異界尋訪</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:"Microsoft JhengHei",sans-serif;
+  background:linear-gradient(180deg,#9ad9ff,#e6f7ff);
+  color:#034;
+}
+
+/* ===== HERO（統一版）===== */
+.hero{
+  min-height:70vh;
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.6)),
+    url("img/tools-hero.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  cursor:pointer;
+}
+
+.hero h1{
+  font-size:clamp(3rem,6vw,4.5rem);
+  font-weight:900;
+  letter-spacing:6px;
+  text-shadow:4px 4px 0 #ff9f1c;
+}
+
+/* ===== HERO 放大圖 ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:22px;
+  box-shadow:0 30px 80px rgba(0,0,0,.8);
+  transform:scale(.85);
+  transition:.3s;
+}
+
+.lightbox:target{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.lightbox:target img{
+  transform:scale(1);
+}
+
+/* ===== 工具卡片區 ===== */
+section{
+  padding:90px 20px;
+}
+
+.tool-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* ===== 卡片 ===== */
+.tool-card{
+  background:#ffffffdd;
+  border-radius:30px;
+  padding:30px 22px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  transition:.4s;
+  opacity:0;
+  animation:fadeUp .7s ease forwards;
+}
+
+.tool-card:nth-child(1){animation-delay:.2s;}
+.tool-card:nth-child(2){animation-delay:.4s;}
+.tool-card:nth-child(3){animation-delay:.6s;}
+.tool-card:nth-child(4){animation-delay:.8s;}
+
+.tool-card:hover{
+  transform:translateY(-14px) scale(1.05);
+  box-shadow:0 32px 64px rgba(0,0,0,.45);
+}
+
+/* ===== 工具圖 ===== */
+.tool-icon{
+  width:100px;
+  height:100px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 20px rgba(0,0,0,.25);
+  cursor:pointer;
+  overflow:hidden; /* ★ 關鍵 */
+}
+
+.tool-icon img{
+  width:100%;
+  height:100%;
+  object-fit:cover; /* ★ 關鍵 */
+}
+
+
+/* ===== 文字 ===== */
+.tool-card h3{
+  font-weight:900;
+  color:#ff7b00;
+  margin-bottom:10px;
+}
+
+.tool-card p{
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+/* ===== 返回 ===== */
+.back{
+  text-align:center;
+  margin-top:80px;
+}
+
+.back a{
+  display:inline-block;
+  padding:14px 36px;
+  background:#ffb703;
+  color:#fff;
+  font-weight:900;
+  border-radius:999px;
+  text-decoration:none;
+  box-shadow:0 14px 26px rgba(0,0,0,.3);
+  transition:.3s;
+}
+
+.back a:hover{
+  transform:translateY(-6px);
+}
+
+/* ===== 動畫 ===== */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(24px);}
+  to{opacity:1; transform:none;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO（可點擊放大） -->
+<a href="#heroZoom">
+  <section class="hero">
+    <h1>🛠 使用工具</h1>
+  </section>
+</a>
+
+<!-- HERO 放大圖 -->
+<div id="heroZoom" class="lightbox">
+  <a href="#">
+    <img src="img/tools-hero.png">
+  </a>
+</div>
+
+<section>
+
+<div class="tool-grid">
+
+  <div class="tool-card">
+    <a href="#unity">
+      <div class="tool-icon">
+        <img src="img/unity.png">
+      </div>
+    </a>
+    <h3>Unity</h3>
+    <p>遊戲主引擎，負責角色控制、關卡與系統邏輯。</p>
+  </div>
+
+  <div class="tool-card">
+    <a href="#vs">
+      <div class="tool-icon">
+        <img src="img/visualstudio.png">
+      </div>
+    </a>
+    <h3>Visual Studio</h3>
+    <p>撰寫與除錯 C# 程式碼。</p>
+  </div>
+
+  <div class="tool-card">
+    <a href="#blender">
+      <div class="tool-icon">
+        <img src="img/blender.png">
+      </div>
+    </a>
+    <h3>Blender</h3>
+    <p>角色與道具建模製作。</p>
+  </div>
+
+  <div class="tool-card">
+    <a href="#sound">
+      <div class="tool-icon">
+        <img src="img/freesound.png">
+      </div>
+    </a>
+    <h3>Freesound</h3>
+    <p>背景音效與環境聲素材來源。</p>
+  </div>
+
+</div>
+
+<div class="back">
+  <a href="index.html">← 回首頁</a>
+</div>
+
+</section>
+
+<!-- 工具圖放大 -->
+<div id="unity" class="lightbox"><a href="#"><img src="img/unity.png"></a></div>
+<div id="vs" class="lightbox"><a href="#"><img src="img/visualstudio.png"></a></div>
+<div id="blender" class="lightbox"><a href="#"><img src="img/blender.png"></a></div>
+<div id="sound" class="lightbox"><a href="#"><img src="img/freesound.png"></a></div>
+
+</body>
+</html>

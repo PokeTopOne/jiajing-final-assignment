@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>動機與目的｜異界尋訪</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:"Microsoft JhengHei",sans-serif;
+  background:linear-gradient(180deg,#9ad9ff,#e6f7ff);
+  color:#034;
+}
+
+/* ===== HERO（完全沿用 tools）===== */
+.hero{
+  min-height:70vh;
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.6)),
+    url("img/motivation-hero.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:clamp(3rem,6vw,4.5rem);
+  font-weight:900;
+  letter-spacing:6px;
+  text-shadow:4px 4px 0 #ff9f1c;
+}
+
+/* ===== 內容區 ===== */
+section{
+  padding:90px 20px;
+}
+
+.content-box{
+  max-width:900px;
+  margin:auto;
+  background:#ffffffdd;
+  border-radius:30px;
+  padding:50px 45px;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  opacity:0;
+  animation:fadeUp .7s ease forwards;
+}
+
+.content-box h2{
+  font-weight:900;
+  color:#ff7b00;
+  margin-bottom:25px;
+  text-align:center;
+}
+
+.content-box p{
+  font-size:1.05rem;
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
+/* ===== 返回 ===== */
+.back{
+  text-align:center;
+  margin-top:80px;
+}
+
+.back a{
+  display:inline-block;
+  padding:14px 36px;
+  background:#ffb703;
+  color:#fff;
+  font-weight:900;
+  border-radius:999px;
+  text-decoration:none;
+  box-shadow:0 14px 26px rgba(0,0,0,.3);
+  transition:.3s;
+}
+
+.back a:hover{
+  transform:translateY(-6px);
+}
+
+/* ===== 動畫（與 tools 相同）===== */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(24px);}
+  to{opacity:1; transform:none;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>💡 動機與目的</h1>
+</section>
+
+<!-- 內容 -->
+<section>
+
+  <div class="content-box">
+    <h2>製作動機</h2>
+    <p>
+      近年來台灣獨立遊戲逐漸在市場上嶄露頭角，
+      許多作品結合文化背景與創新玩法，
+      讓我們對遊戲製作產生濃厚興趣。
+    </p>
+
+    <p>
+      受到《返校》、《細胞迷途》等遊戲啟發，
+      我們希望打造一款結合校園場景與異世界元素的
+      2D 冒險遊戲，讓玩家在熟悉與未知之間探索故事。
+    </p>
+
+    <h2>專題目的</h2>
+    <p>
+      本專題透過 Unity 2D 遊戲開發流程，
+      實作角色控制、關卡設計與互動系統，
+      培養團隊在程式、設計與整合方面的能力。
+    </p>
+
+    <p>
+      同時希望讓玩家在遊戲過程中，
+      透過挑戰關卡與蒐集寶石，
+      感受到冒險、成長與完成目標的成就感。
+    </p>
+  </div>
+
+  <div class="back">
+    <a href="index.html">← 回首頁</a>
+  </div>
+
+</section>
+
+</body>
+</html>
